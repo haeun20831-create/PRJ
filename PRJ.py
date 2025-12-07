@@ -47,5 +47,9 @@ class StudentManagerApp:
         self.tree.heading("name", text="이름")
         self.tree.heading("id", text="학번")
         self.tree.heading("major", text="학과")
-        
+
         self.tree.pack(fill="both", expand=True)
+
+        # 버튼 영역 프레임
+        btn_frame = ttk.Frame(self.root)
+        btn_frame.pack(pady=10)
