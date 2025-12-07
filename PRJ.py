@@ -27,3 +27,12 @@ class StudentManagerApp:
         # 저장 취소 시 종료
         if not file:
             return
+        # Treeview 데이터를 리스트로 변환
+        students = []
+        for row in self.tree.get_children():
+            values = self.tree.item(row)["values"]
+            students.append({
+                "name": values[0],
+                "id": values[1],
+                "major": values[2]
+            })
