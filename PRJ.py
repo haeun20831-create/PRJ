@@ -96,3 +96,12 @@ class StudentManagerApp:
             # 불러오기 오류 메시지
             messagebox.showerror("불러오기 오류", f"파일을 읽는 중 오류가 발생했습니다:\n{e}")
             return
+        # 기존 목록 초기화
+        self.tree.delete(*self.tree.get_children())
+
+        # 불러온 데이터를 테이블에 삽입
+        for data in data_list:
+            self.tree.insert("", "end", values=(data["name"], data["id"], data["major"]))
+
+        # 불러오기 완료 메시지
+        messagebox.showinfo("불러오기 완료", f"{file.split('/')[-1]} 파일 불러오기 성공!")
