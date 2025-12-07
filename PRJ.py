@@ -75,3 +75,24 @@ class StudentManagerApp:
             return
 
         data_list = []
+        try:
+            # 파일 확장자에 따라 분기
+            if file.endswith('.json'):
+                # JSON 파일 로드
+                with open(file, "r", encoding="utf-8") as f:
+                    data_list = json.load(f)
+            elif file.endswith('.csv'):
+                # CSV 파일 로드
+                df = pd.read_csv(file)
+                data_list = df.to_dict('records') # DataFrame -> dict list
+            elif file.endswith('.xlsx'):
+                # Excel 파일 로드
+                df = pd.read_excel(file)
+                data_list = df.to_dict('records') # DataFrame -> dict list
+            else:
+                messagebox.showwarning("지원하지 않는 형식", "JSON, CSV, XLSX 파일 형식만 지원합니다.")
+                return
+        except Exception as e:
+            # 불러오기 오류 메시지
+            messagebox.showerror("불러오기 오류", f"파일을 읽는 중 오류가 발생했습니다:\n{e}")
+            return
