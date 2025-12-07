@@ -34,3 +34,7 @@ class StudentManagerApp:
 
         # 추가 버튼
         ttk.Button(input_frame, text="추가", command=self.add_student).grid(row=1, column=3, padx=5)
+
+        # 목록 영역 프레임 (Treeview)
+        list_frame = ttk.LabelFrame(self.root, text="학생 목록")
+        list_frame.pack(fill="both", expand=True, padx=10, pady=10)
