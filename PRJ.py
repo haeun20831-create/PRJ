@@ -20,3 +20,14 @@ class StudentManagerApp:
         input_frame = ttk.LabelFrame(self.root, text="학생 정보 입력")
         input_frame.pack(fill="x", padx=10, pady=10)
 
+        
+        # 이름, 학번, 학과 입력 필드
+        ttk.Label(input_frame, text="이름").grid(row=0, column=0, padx=5, pady=5)
+        self.name_entry = ttk.Entry(input_frame)
+        self.name_entry.grid(row=0, column=1, padx=5, pady=5)
+        ttk.Label(input_frame, text="학번").grid(row=0, column=2, padx=5, pady=5)
+        self.id_entry = ttk.Entry(input_frame)
+        self.id_entry.grid(row=0, column=3, padx=5, pady=5)
+        ttk.Label(input_frame, text="학과").grid(row=1, column=0, padx=5, pady=5)
+        self.major_entry = ttk.Entry(input_frame)
+        self.major_entry.grid(row=1, column=1, padx=5, pady=5)
