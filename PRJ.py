@@ -13,7 +13,10 @@ class StudentManagerApp:
 
         self.create_widgets() # 위젯 생성 함수 호출
 
-        
+
     # 위젯 생성 및 배치
     def create_widgets(self):
+        # 입력 영역 프레임
+        input_frame = ttk.LabelFrame(self.root, text="학생 정보 입력")
+        input_frame.pack(fill="x", padx=10, pady=10)
 
