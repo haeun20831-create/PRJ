@@ -42,3 +42,10 @@ class StudentManagerApp:
         # Treeview 테이블 생성
         columns = ("name", "id", "major")
         self.tree = ttk.Treeview(list_frame, columns=columns, show="headings")
+
+        # 테이블 헤더 설정
+        self.tree.heading("name", text="이름")
+        self.tree.heading("id", text="학번")
+        self.tree.heading("major", text="학과")
+        
+        self.tree.pack(fill="both", expand=True)
