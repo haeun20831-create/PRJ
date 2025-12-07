@@ -24,3 +24,6 @@ class StudentManagerApp:
                 ("All Files", "*.*")
             ]
         )
+        # 저장 취소 시 종료
+        if not file:
+            return
