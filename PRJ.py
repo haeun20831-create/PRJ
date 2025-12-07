@@ -38,3 +38,7 @@ class StudentManagerApp:
         # 목록 영역 프레임 (Treeview)
         list_frame = ttk.LabelFrame(self.root, text="학생 목록")
         list_frame.pack(fill="both", expand=True, padx=10, pady=10)
+
+        # Treeview 테이블 생성
+        columns = ("name", "id", "major")
+        self.tree = ttk.Treeview(list_frame, columns=columns, show="headings")
