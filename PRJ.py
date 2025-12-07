@@ -58,3 +58,20 @@ class StudentManagerApp:
         except Exception as e:
             # 저장 오류 메시지
             messagebox.showerror("저장 오류", f"파일을 저장하는 중 오류가 발생했습니다:\n{e}")
+    # 파일 불러오기 함수 (JSON, CSV, Excel)
+    def load_file(self):
+        file = filedialog.askopenfilename(
+            title="학생 정보 불러오기",
+            filetypes=[
+                ("Supported Files", "*.json *.csv *.xlsx"),
+                ("JSON Files", "*.json"),
+                ("CSV Files", "*.csv"),
+                ("Excel Files", "*.xlsx"),
+                ("All Files", "*.*")
+            ]
+        )
+        # 불러오기 취소 시 종료
+        if not file:
+            return
+
+        data_list = []
