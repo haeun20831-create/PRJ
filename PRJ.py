@@ -10,4 +10,10 @@ class StudentManagerApp:
         self.root = root  # 메인 윈도우
         self.root.title("학생 정보 관리 프로그램") # 윈도우 제목 설정
         self.root.geometry("600x420") # 윈도우 크기 설정
+
         self.create_widgets() # 위젯 생성 함수 호출
+
+        
+    # 위젯 생성 및 배치
+    def create_widgets(self):
+
