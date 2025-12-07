@@ -36,3 +36,25 @@ class StudentManagerApp:
                 "id": values[1],
                 "major": values[2]
             })
+        try:
+            # 파일 확장자에 따라 분기
+            if file.endswith('.json'):
+                # JSON으로 저장
+                with open(file, "w", encoding="utf-8") as f:
+                    json.dump(students, f, ensure_ascii=False, indent=4)
+            elif file.endswith('.csv'):
+                # CSV로 저장
+                df = pd.DataFrame(students)
+                df.to_csv(file, index=False, encoding='utf-8-sig') # Excel 한글 깨짐 방지
+            elif file.endswith('.xlsx'):
+                # Excel로 저장
+                df = pd.DataFrame(students)
+                df.to_excel(file, index=False)
+            else:
+                messagebox.showwarning("지원하지 않는 형식", "JSON, CSV, XLSX 파일 형식만 지원합니다.")
+                return
+            # 저장 완료 메시지
+            messagebox.showinfo("저장 완료", f"{file.split('/')[-1]} 파일 저장 완료!")
+        except Exception as e:
+            # 저장 오류 메시지
+            messagebox.showerror("저장 오류", f"파일을 저장하는 중 오류가 발생했습니다:\n{e}")
