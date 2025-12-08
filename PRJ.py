@@ -38,3 +38,7 @@ class StudentManagerApp:
         if not selected:
             messagebox.showwarning("선택 오류", "삭제할 학생을 선택하세요.")
             return
+        
+        # 선택된 항목 삭제
+        for item in selected:
+            self.tree.delete(item)
