@@ -14,3 +14,7 @@ class StudentManagerApp:
 
 # 학생 추가 함수
     def add_student(self):
+        # 입력값 가져오기
+        name = self.name_entry.get().strip()
+        sid = self.id_entry.get().strip()
+        major = self.major_entry.get().strip()
