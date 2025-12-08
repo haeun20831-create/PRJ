@@ -89,7 +89,6 @@ class StudentManagerApp:
         # 선택된 항목 삭제
         for item in selected:
             self.tree.delete(item)
-        self.create_widgets() # 위젯 생성 함수 호출
 
     # 파일 저장 함수 (JSON, CSV, Excel)
     def save_file(self):
