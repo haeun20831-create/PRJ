@@ -58,3 +58,35 @@ class StudentManagerApp:
         ttk.Button(btn_frame, text="삭제", command=self.delete_student).grid(row=0, column=0, padx=10)
         ttk.Button(btn_frame, text="파일로 저장", command=self.save_file).grid(row=0, column=1, padx=10)
         ttk.Button(btn_frame, text="파일 불러오기", command=self.load_file).grid(row=0, column=2, padx=10)
+        self.create_widgets() # 위젯 생성 함수 호출
+
+# 학생 추가 함수
+    def add_student(self):
+        # 입력값 가져오기
+        name = self.name_entry.get().strip()
+        sid = self.id_entry.get().strip()
+        major = self.major_entry.get().strip()
+
+        # 입력값 유효성 검사
+        if not name or not sid or not major:
+            messagebox.showwarning("입력 오류", "모든 항목을 입력하세요.")
+            return
+
+        # 목록에 학생 추가
+        self.tree.insert("", "end", values=(name, sid, major))
+
+        # 입력 필드 초기화
+        self.name_entry.delete(0, tk.END)
+        self.id_entry.delete(0, tk.END)
+        self.major_entry.delete(0, tk.END)
+
+    # 학생 삭제 함수
+    def delete_student(self):
+        selected = self.tree.selection() # 선택된 항목 가져오기
+        if not selected:
+            messagebox.showwarning("선택 오류", "삭제할 학생을 선택하세요.")
+            return
+        
+        # 선택된 항목 삭제
+        for item in selected:
+            self.tree.delete(item)
