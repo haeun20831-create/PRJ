@@ -26,3 +26,8 @@ class StudentManagerApp:
 
         # 목록에 학생 추가
         self.tree.insert("", "end", values=(name, sid, major))
+
+        # 입력 필드 초기화
+        self.name_entry.delete(0, tk.END)
+        self.id_entry.delete(0, tk.END)
+        self.major_entry.delete(0, tk.END)
