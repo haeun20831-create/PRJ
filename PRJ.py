@@ -31,3 +31,10 @@ class StudentManagerApp:
         self.name_entry.delete(0, tk.END)
         self.id_entry.delete(0, tk.END)
         self.major_entry.delete(0, tk.END)
+
+    # 학생 삭제 함수
+    def delete_student(self):
+        selected = self.tree.selection() # 선택된 항목 가져오기
+        if not selected:
+            messagebox.showwarning("선택 오류", "삭제할 학생을 선택하세요.")
+            return
