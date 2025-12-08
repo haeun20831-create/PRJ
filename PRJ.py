@@ -23,3 +23,6 @@ class StudentManagerApp:
         if not name or not sid or not major:
             messagebox.showwarning("입력 오류", "모든 항목을 입력하세요.")
             return
+
+        # 목록에 학생 추가
+        self.tree.insert("", "end", values=(name, sid, major))
