@@ -58,7 +58,6 @@ class StudentManagerApp:
         ttk.Button(btn_frame, text="삭제", command=self.delete_student).grid(row=0, column=0, padx=10)
         ttk.Button(btn_frame, text="파일로 저장", command=self.save_file).grid(row=0, column=1, padx=10)
         ttk.Button(btn_frame, text="파일 불러오기", command=self.load_file).grid(row=0, column=2, padx=10)
-        self.create_widgets() # 위젯 생성 함수 호출
 
 # 학생 추가 함수
     def add_student(self):
