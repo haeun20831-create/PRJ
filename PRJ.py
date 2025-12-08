@@ -185,3 +185,9 @@ class StudentManagerApp:
 
         # 불러오기 완료 메시지
         messagebox.showinfo("불러오기 완료", f"{file.split('/')[-1]} 파일 불러오기 성공!")
+
+# 메인 실행 블록
+if __name__ == "__main__":
+    root = tk.Tk() # 메인 윈도우 생성
+    app = StudentManagerApp(root) # 앱 인스턴스 생성
+    root.mainloop() # GUI 실행
