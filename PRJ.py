@@ -18,3 +18,8 @@ class StudentManagerApp:
         name = self.name_entry.get().strip()
         sid = self.id_entry.get().strip()
         major = self.major_entry.get().strip()
+
+        # 입력값 유효성 검사
+        if not name or not sid or not major:
+            messagebox.showwarning("입력 오류", "모든 항목을 입력하세요.")
+            return
